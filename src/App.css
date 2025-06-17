@@ -1,0 +1,653 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --clr-primary: #0e0e0e;
+  --clr-secondary: #ffffff;
+  --clr-third: #f3f3f3;
+  --clr-fourth: #f6f6f6;
+  --input-text: #939393;
+  --primary-light: #f8f8f8;
+}
+
+p{
+  font-family: "Poppins", sans-serif;
+  color: var(--clr-primary);
+}
+input:focus,
+select:focus {
+  box-shadow: 0 0 0 0.25rem rgb(16 14 14 / 6%) !important;
+}
+
+input[type="radio"]:checked {
+  background-color: var(--clr-primary);
+  border: 0;
+}
+
+.min-h-screen {
+  min-height: 100vh;
+}
+
+.web-bg-primary {
+  background-color: var(--primary-light);
+}
+
+.bg_primary {
+  background-color: var(--clr-primary) !important;
+}
+
+.bg_secondary {
+  background-color: var(--clr-secondary);
+}
+.bg_fourth {
+  background-color: var(--clr-fourth);
+}
+.same_shadow_border {
+  box-shadow: 0px 0px 10px 0px #0000000d;
+  border: 1px solid #0000000d;
+  border-radius: 12px;
+}
+.after-none::after {
+  display: none !important;
+}
+.rounded_border {
+  border-radius: 12px;
+}
+.cursor-pointer {
+  cursor: pointer;
+}
+
+.border_r_16 {
+  border-radius: 16px;
+}
+
+.min-100 {
+  min-height: 100px !important;
+}
+
+.poppins_font{
+  font-family: "Poppins", sans-serif;
+}
+.same_poppins_1 {
+  color: var(--clr-primary);
+  font-size: 20px;
+  font-weight: 500;
+  font-family: "Poppins", sans-serif;
+}
+.same_poppins_2 {
+  color: var(--clr-primary);
+  font-size: 18px;
+  font-weight: 400;
+  font-family: "Poppins", sans-serif;
+}
+.same_poppins_3 {
+  color: var(--clr-primary);
+  font-family: "Poppins", sans-serif;
+}
+.same_poppins_4 {
+  color: var(--clr-primary);
+  font-size: 14px;
+  font-weight: 400;
+  font-family: "Poppins", sans-serif;
+}
+.fw-500 {
+  font-weight: 500;
+}
+.cookies_title {
+  color: #19295c !important;
+}
+.grey_dark {
+  color: #939393 !important;
+}
+.clr_primary {
+  color: var(--clr-primary) !important;
+}
+.dark_btn {
+  font-size: 16px !important;
+  /* line-height: 28px !important; */
+  font-weight: 500 !important;
+  font-family: "Poppins", sans-serif !important;
+  background-color: #0e0e0e !important;
+  height: 48px;
+}
+
+.cookies-modal .modal-dialog {
+  display: flex !important;
+  align-items: end;
+}
+.cookies-modal .modal-content {
+  height: auto !important;
+}
+
+.grey-medium {
+  font-family: "Poppins", sans-serif;
+  font-weight: 500;
+  font-size: 16px;
+  color: #939393;
+}
+
+.height-after-nav {
+  min-height: calc(100vh - 164px);
+}
+
+.fw-400 {
+  font-weight: 400;
+}
+
+.common-tabs .nav-link {
+  font-family: "Poppins", sans-serif;
+  font-weight: 400;
+  /* font-size: 24px; */
+}
+.common-tabs .nav-link.active {
+  background-color: var(--clr-primary) !important;
+}
+
+.common-tabs .nav-link,
+.common-tabs .nav-link:hover {
+  border: 1px solid #efefef;
+  color: var(--input-text);
+  background-color: var(--clr-secondary);
+}
+
+.rotate-180 {
+  transform: rotate(180deg);
+}
+.small-arrow-btn {
+  padding: 6px !important;
+  line-height: 0px !important;
+}
+.small-arrow-btn img {
+  height: 9px;
+  width: 9px;
+}
+.py-6 {
+  padding-top: 0.75rem !important;
+  padding-bottom: 0.75rem !important;
+}
+
+.min-w-380{
+  max-width: 380px;
+  width: 100%;
+}
+.photos > div{
+  padding: 2px;
+}
+
+.photos  img,
+.videos  img {
+  width: 100%;
+  border-radius: 0;
+  position: relative;
+}
+
+.z-5{
+  z-index: 5;
+  width: 50px !important;
+  right: 20px;
+  top: 20px;
+}
+
+.back-button{
+  height: 30px;
+  width: 30px;
+  line-height: 0 !important; 
+  padding: 5px 10px !important;
+}
+
+.costumized-switch .form-check-input{
+  float: right !important;
+  padding-left: 0;
+}
+.costumized-switch .form-check-input:checked{
+  background-color: #0e0e0e;
+  border-color: #0e0e0e;
+}
+
+input[type="tel"].form-control::placeholder,
+input[type="text"].form-control::placeholder,
+input[type="password"].form-control::placeholder,
+input[type="email"].form-control::placeholder {
+  /* display: none !important; */
+  font-family: "Poppins", sans-serif;
+  font-size: 14px;
+  font-weight: 400;
+  color: #939393 !important;
+}
+
+input[type="date"].form-control{
+  font-family: "Poppins", sans-serif;
+  text-transform: uppercase;
+  color: #939393;
+}
+.line-height-0{
+  line-height: 0 !important;
+}
+
+.search-select-icon input{
+  border: 0;
+}
+
+.modal-content{
+  background-color: #F9F9F9 !important;
+}
+
+.btn:disabled{
+  opacity: 20% !important;
+}
+
+.form-check input[type="checkbox"] {
+  top: 1px;
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  width: 15px;
+  height: 15px;
+  background-color: transparent; /* Default unchecked background */
+  border: 2px solid #ccc; /* Default border */
+  border-radius: 3px; /* Optional: for rounded corners */
+  cursor: pointer;
+  position: relative;
+  transition: all 0.2s ease; /* Smooth transition */
+  border-radius: 3px;
+
+
+}
+.form-check input[type="checkbox"]:checked {
+  background-color: transparent; /* Checked background color */
+  border-color: var(--clr-primary); /* Checked border color */
+  background-image: url("./assets/images/Checkbox-icon.svg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: 8px 8px; /* Adjust size of the SVG icon */
+}
+
+.form-check label{
+  font-size: 14px;
+}
+
+.year-selector-medium   select {
+  font-family: "Poppins";
+  box-shadow: 0px 0px 18.02px 0px #0000001a;
+  font-weight: 500;
+  font-size: 14px;
+  background-image: url("./assets/images/Year_Select_Arrow.svg");
+  background-size: 15px auto;
+  padding-top: 8px;
+  padding-bottom: 6px;
+}
+.year-selector-medium.with-calendar   select {
+  background-image: url("./assets/images/Calendar.svg");
+}
+
+
+
+
+/* slider Container for proper layout */
+.slider-container {
+  position: relative;
+  width: 300px; /* Adjust width as needed */
+  margin: 50px auto;
+}
+
+/* Custom Range Slider */
+.custom-range-slider {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 100%;
+  height: 10px; /* Height of the slider track */
+  background: linear-gradient(to right, black var(--progress), #d3d3d3 var(--progress));
+  border-radius: 50px; /* Rounded corners */
+  outline: none;
+  position: relative;
+  cursor: pointer;
+}
+
+/* Thumb Styling */
+.custom-range-slider::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 18px;
+  height: 18px; /* Size of the thumb */
+  background: white;
+  border: 3px solid black;
+  border-radius: 50%; /* Circular thumb */
+  cursor: pointer;
+  position: relative;
+  z-index: 2;
+}
+
+.custom-range-slider::-moz-range-thumb {
+  width: 16px;
+  height: 16px; /* Size of the thumb */
+  background: white;
+  border: 2px solid black;
+  border-radius: 50%; /* Circular thumb */
+  cursor: pointer;
+}
+
+/* Track Background */
+.custom-range-slider::-moz-range-track {
+  background: linear-gradient(to right, black var(--progress), #d3d3d3 var(--progress));
+  border-radius: 50px; 
+}
+
+@media (max-width: 376px) {
+  .create-account-btn{
+    font-size: 12px !important;
+  }
+}
+
+
+/* tree */
+/* 2x2 Grid Layout */
+.media-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr); /* 2 columns */
+  grid-template-rows: repeat(2, 1fr); /* 2 rows */
+  gap: 5px;
+  width: 100%;
+  max-width: 300px;
+  position: relative;
+}
+
+/* Grid Items (Images & Videos) */
+.media-grid-item {
+  width: 100%;
+  aspect-ratio: 1/1; /* Ensures uniform square ratio */
+  overflow: hidden;
+  border-radius: 5px;
+  position: relative;
+}
+
+.media-grid-img,
+.media-video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* Makes sure all images/videos fill their space */
+  border-radius: 5px;
+}
+
+/* +X Overlay at Bottom-Right (4th Position) */
+.media-overlay {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: rgba(0, 0, 0, 0.6);
+  color: white;
+  font-size: 18px;
+  font-weight: bold;
+  cursor: pointer;
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  width: 100%;
+  height: 100%;
+  border-radius: 5px;
+}
+
+/* Modal View */
+.media-modal-body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  max-height: 80vh;
+  overflow-y: auto;
+}
+
+.modal-media {
+  width: 100%;
+  max-width: 90%;
+  max-height: 80vh;
+  object-fit: contain;
+  border-radius: 5px;
+}
+
+@media (max-width: 480px) {
+  .otp-input input {
+    width: 45px !important;
+    height: 38px !important;
+    background-color: #000;
+    margin: 0 4px !important;
+  }
+}
+@media (min-width: 480px) {
+  .otp-input input {
+    width: 84px !important;
+    
+  }
+}
+/* chat related */
+
+/* Container for input field and image preview */
+.chat-input-container {
+  display: flex;
+  align-items: center;
+  padding: 8px;
+  background-color: #fff;
+  border-radius: 8px;
+}
+
+/* Image Preview Container */
+.image-preview-container {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-right: 10px;
+}
+
+/* Image Preview */
+.image-preview {
+  max-width: 100px;
+  max-height: 100px;
+  border-radius: 8px;
+  object-fit: cover;
+}
+
+/* Remove Image (X) Button */
+.remove-image-btn {
+  position: absolute;
+  top: -8px;
+  right: -8px;
+  background-color: red;
+  color: white;
+  border: none;
+  border-radius: 50%;
+  width: 24px;
+  height: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 14px;
+  cursor: pointer;
+}
+
+/* Input Field */
+.message-input {
+  flex-grow: 1;
+  padding: 8px;
+  border: none;
+  border-radius: 8px;
+  background-color: #f5f5f5;
+  font-size: 16px;
+}
+
+/* Send Button */
+.send-button {
+  background-color: #007bff;
+  color: white;
+  border: none;
+  padding: 8px 12px;
+  border-radius: 8px;
+  cursor: pointer;
+  margin-left: 8px;
+}
+
+.send-button:disabled {
+  background-color: #b0b0b0;
+  cursor: not-allowed;
+}
+
+
+/*  post related */
+
+.upload-form {
+  width: 100%;
+  max-width: 500px;
+  margin: auto;
+  padding: 15px;
+  background: #f8f9fa;
+  border-radius: 10px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.text-input {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  resize: none;
+  margin-bottom: 10px;
+}
+
+.upload-section {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 15px;
+  margin-bottom: 10px;
+}
+
+.upload-button {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 15px;
+  background: #007bff;
+  color: white;
+  border-radius: 5px;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.media-preview-container {
+display: grid;
+grid-template-columns: repeat(auto-fit, minmax(100px, 1fr)); /* Ensure better spacing */
+gap: 10px; /* Adjust for consistent spacing */
+padding: 10px; /* Add padding around */
+justify-content: center; /* Center images */
+}
+
+.preview-item {
+  position: relative;
+  width: 100px;
+  height: 100px;
+  border-radius: 8px;
+  overflow: hidden;
+  background: #ddd;
+}
+
+.preview-image, .preview-video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 8px;
+}
+
+.preview-video {
+  object-fit: contain;
+}
+
+.remove-btn {
+  position: absolute;
+  top: 5px;
+  right: 5px;
+  background: rgba(0, 0, 0, 0.7);
+  color: white;
+  border: none;
+  border-radius: 50%;
+  width: 20px;
+  height: 20px;
+  font-size: 12px;
+  cursor: pointer;
+}
+
+.submit-button {
+  width: 100%;
+  padding: 10px;
+  background: #28a745;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+
+/*  otp related page */
+
+.video-thumbnail-wrapper {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+}
+
+.video-thumbnail-wrapper video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.play-button-overlay {
+  position: absolute;
+  top: 41%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: rgba(0, 0, 0, 0.7);
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  pointer-events: none;
+}
+
+/* Specific fix for AiFillPlayCircle icon */
+.play-button-overlay svg {
+  transform: translateX(2px); /* Fine-tune horizontal centering */
+  display: block;
+}
+
+/* Alternative: Use a custom play triangle */
+.play-button-overlay::before {
+  content: "";
+  width: 0;
+  height: 0;
+  border-left: 12px solid white;
+  border-top: 8px solid transparent;
+  border-bottom: 8px solid transparent;
+  margin-left: 3px; /* Optical centering for triangle */
+  display: none; /* Enable this if you want to use triangle instead */
+}
+
+/* If using custom triangle, hide the React icon */
+.play-button-overlay.use-triangle svg {
+  display: none;
+}
+
+.play-button-overlay.use-triangle::before {
+  display: block;
+}
+

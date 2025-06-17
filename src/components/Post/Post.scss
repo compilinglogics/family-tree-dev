@@ -1,0 +1,141 @@
+.main-post-line {
+  .avatar {
+    width: 58px;
+    height: 58px;
+    object-fit: cover;
+  }
+  .name {
+    font-family: "Poppins", sans-serif;
+    font-size: 20px;
+    font-weight: 600;
+    line-height: 20px;
+    color: #19295c;
+  }
+
+  .verified-icon {
+    width: 17px;
+  }
+  .link-icon {
+    width: 17px;
+  }
+  .post-line-btn {
+    max-width: 23px;
+  }
+  .coins-counter {
+    img {
+      margin-right: 10px;
+    }
+    .number {
+      margin-right: 3px;
+      color: var(--clr-primary);
+      font-weight: 600;
+      vertical-align: middle;
+    }
+  }
+
+  .post-location {
+    font-family: "Poppins";
+    font-size: 14px;
+    font-weight: 400;
+    // line-height: 1.3rem;
+    color: #99a1be;
+  }
+  .post-content {
+    font-family: "Poppins";
+    font-size: 20px;
+    font-weight: 400;
+    color: var(--clr-primary);
+  }
+  .image-post-content {
+    font-family: "Poppins";
+    color: #2D3F7B;
+    font-weight: 400;
+    font-size: 20px;
+  }
+  .comment-likes {
+    font-family: "Poppins";
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 24px;
+    color: #939393;
+  }
+
+  .like-img {
+    width: 38px;
+    height: 38px;
+    cursor: pointer;
+  }
+
+  .emojis {
+    max-width: 40px;
+  }
+
+  .horizontal-line-between-comment {
+    width: 100%;
+    border: 1px solid rgb(0 0 0 / 50%);
+    padding: 0px 10px;
+  }
+  .comment-avatar {
+    width: 35px;
+    height: 35px;
+  }
+  .comment-menu{
+    max-width: 7px;
+  }
+  .comment-user-name {
+    font-family: "Poppins";
+    font-size: 14px;
+    font-weight: 500;
+  }
+  .comment-actions{
+    span{
+      font-weight: 600;
+      font-size: 12px;
+    }
+    .like,.reply,.time{
+      color: #939393;
+   
+
+    }
+    .time{
+      font-weight: 400;
+    }
+  }
+}
+
+
+
+
+
+.comment-user-name {
+  font-family: "Poppins";
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 24px;
+  text-align: left;
+}
+
+.like {
+  font-family: "Poppins";
+  font-size: 14px;
+  font-weight: 700;
+  line-height: 21px;
+  text-align: left;
+}
+.reply {
+  font-family: "Poppins";
+  font-size: 14px;
+  font-weight: 700;
+  line-height: 21px;
+  text-align: left;
+}
+.time {
+  font-family: "Poppins";
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 21px;
+  text-align: left;
+}
+.post-inner-img {
+  width: 33%;
+}

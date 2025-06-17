@@ -1,0 +1,291 @@
+// /* Custom styles for the family tree nodes */
+// .custom-node {
+//     background-color: #f0f0f0;
+//     border-radius: 8px;
+//     padding: 10px;
+//     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+//     width: 200px;
+//     text-align: center;
+//   }
+  
+//   .node-img-container {
+//     margin-bottom: 10px;
+//   }
+  
+//   .custom-img {
+//     border-radius: 50%;
+//     width: 80px;
+//     height: 80px;
+//     object-fit: cover; /* Ensure the image doesn't stretch */
+//   }
+  
+//   .node-name {
+//     font-weight: bold;
+//     color: #333;
+//     margin-top: 10px;
+//   }
+//   .link use {
+//     display: none;
+// }
+// .family-tree-node {
+//     /* Styles for nodes */
+//     background-color: #007bff;
+//     border: 2px solid #0056b2;
+//     padding: 10px;
+//     border-radius: 10px;
+//   }
+  
+//   .family-tree-node .field_0 {
+//     /* Styles for the name field */
+//     font-size: 20px;
+//     font-weight: bold;
+//   }
+  
+//   .family-tree-connector {
+//     /* Styles for connectors */
+//     stroke: #6c757d;
+//     stroke-width: 2;
+//   }
+
+  
+
+
+.family-node {
+  border: red solid 1.5px;
+  width: 180px;
+  height: 250px;
+  background-color: white;
+  border-radius: 15px;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  position: relative;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.05);
+  flex-direction: column;
+  justify-items: center;
+  padding: 14px;
+  box-sizing: border-box;
+  transition: all 0.3s ease;
+}
+
+/* Image Container Styles */
+.family-node .image-container {
+  width: 64px;
+  height: 64px;
+  overflow:hidden;
+  border: 2px solid #ccc;
+}
+
+.family-node .profile-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Name Styles */
+.family-node .name {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
+  font-size: 18px;
+  color: #000;
+  padding: 0px 10px;
+  text-align: center;
+  margin-bottom: 5px;
+}
+
+.family-node .name p {
+  margin-bottom: 0 !important;
+  overflow: hidden; /* Hide any overflowed text */
+  white-space: nowrap; /* Prevent text wrapping */
+  text-overflow: ellipsis;
+}
+
+.family-node .name svg {
+  flex-shrink: 0;
+}
+
+/* Additional Info Styles */
+.family-node .year > p, 
+.family-node .city > p, 
+.family-node .country > p {
+  font-size: 16px;
+  color: #939393;
+  text-align: center;
+  margin: 0px 0;
+}
+
+/* Menu Icon Styles */
+.family-node .menu-icon {
+  position: absolute;
+  top: 15px;
+  right: 10px;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 2px;
+}
+
+.family-node .menu-icon .dot {
+  width: 6px;
+  height: 6px;
+  background-color: #000000;
+  border-radius: 50%;
+  transition: background-color 0.3s ease;
+}
+
+.family-node .menu-icon:hover > .dot {
+  background-color: #777777;
+}
+
+/* Node Type Specific Styles */
+/* highlighted Node */
+.family-node.highlighted {
+  background-color: #f0f0f0;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.family-node.highlighted .name {
+  color: #333;
+}
+
+.family-node.highlighted .year,
+.family-node.highlighted .city,
+.family-node.highlighted .country {
+  color: #666;
+}
+
+/* Current Node */
+.family-node.current {
+  background-color: #0E0E0E;
+  color: white;
+}
+.family-node.linked {
+  background-color: rgba(255, 0, 0, 0.4);
+  color: white;
+}
+
+.family-node.current .image-container {
+  border-color: rgba(255, 255, 255, 0.3);
+}
+
+.family-node.current .name > p{
+  color: white;
+}
+
+.family-node.current .year > p,
+.family-node.current .city > p  ,
+.family-node.current .country > p{
+  color: rgba(255, 255, 255, 0.7);
+}
+
+.family-node.current .menu-icon .dot {
+  background-color: #FFFFFF;
+}
+
+.family-node.current .menu-icon:hover .dot {
+  background-color: #DDD;
+}
+
+/* Partner Node */
+.family-node.partner {
+  background-color: white;
+  border: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+.family-node.partner .name {
+  color: #333;
+}
+
+/* Gender Specific Styles */
+.family-node.male .image-container {
+  border-radius: 10px;
+}
+
+.family-node.female .image-container {
+  border-radius: 50%;
+}
+
+.family-node.female .profile-img {
+  border-radius: 50%;
+}
+
+.family-node.non-binary .image-container {
+  clip-path: polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%);
+}
+
+.add-icon {
+  width: 25px;
+  height: 24px;
+}
+
+.add-icon:hover {
+  cursor: pointer;
+}
+
+.pagination {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  bottom: 0;
+  width: 100%;
+  padding: 10px;
+}
+
+button.prev-button,
+button.next-button {
+  background: #f0f0f0;
+  border: none;
+  border-radius: 5px;
+  width: 20px;
+  height: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  margin: 0 5px;
+}
+
+button.prev-button.disabled, 
+button.next-button.disabled {
+  cursor: not-allowed;
+  background: #b4b4b4;
+}
+
+button.prev-button:hover,
+button.next-button:hover {
+  background: #b4b4b4;
+}
+
+button.pag-prev-button,
+button.pag-next-button {
+  background: #e4e4e4;
+  border: none;
+  border-radius: 5px;
+  width: 60px;
+  height: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  margin: 0 10px;
+}
+
+button.pag-prev-button.disabled, 
+button.pag-next-button.disabled {
+  cursor: not-allowed;
+  background: #b4b4b4;
+}
+
+button.pag-prev-button:hover,
+button.pag-next-button:hover {
+  background: #b4b4b4;
+}
+
+span.pagination-span {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}

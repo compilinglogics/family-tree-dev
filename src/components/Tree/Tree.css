@@ -1,0 +1,56 @@
+.navigation_buttons .nav-link {
+  font-family: "Poppins", sans-serif;
+  color: var(--clr-primary);
+}
+
+.navigation_buttons .nav-link.active {
+  color: #ffff;
+  background-color: var(--clr-primary);
+}
+
+.mt-95 {
+  margin-top: 95px;
+}
+
+.vertical-line-1 {
+  height: 1px;
+  background: black;
+  text-align: center;
+}
+
+.horizontal-line-1 {
+  height: 230px;
+  background: black;
+  width: 1px;
+  text-align: center;
+  margin: 0 auto;
+}
+
+.horizontal-line-2 {
+  height: 125px;
+  background: black;
+  width: 1px;
+  text-align: center;
+  margin: 0 auto;
+}
+
+.line-container-1 {
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.line-container-2 {
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+.line-container-3 {
+  max-width: 700px;
+}
+
+@media (min-width: 1190px) {
+  .line-container-3 {
+    margin-left: 50px;
+  }
+}
+/*# sourceMappingURL=Tree.css.map */

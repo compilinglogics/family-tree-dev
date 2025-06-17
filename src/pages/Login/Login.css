@@ -1,0 +1,239 @@
+.login-section {
+  background-color: var(--clr-primary);
+  width: 100%;
+  min-height: 100vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.logo-place {
+  width: 434px;
+  height: 345px;
+}
+
+.logo-place img {
+  width: 100%;
+  height: 100%;
+}
+
+.login-language-selector select {
+  background-image: url("../../assets/images/SelectArrow.svg");
+  background-size: 15px auto;
+  background-color: var(--clr-third);
+  color: var(--input-text);
+  font-family: "Poppins", sans-serif;
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 21px;
+}
+
+.login-box {
+  max-width: 100%;
+  background-color: var(--clr-secondary);
+  border-radius: 15px;
+  padding: 32px 44px;
+}
+
+.login-heading {
+  font-family: "Poppins", sans-serif;
+  font-weight: 500;
+  font-style: medium;
+  text-align: center;
+  text-transform: uppercase;
+}
+
+.language-dropdown {
+  text-align: center;
+  width: 150px;
+  margin: 0 auto;
+}
+
+.login-btn {
+  height: 56px;
+  padding: 12px 8px 12px 8px;
+  gap: 8px;
+  border-radius: 32px;
+  font-family: "Poppins";
+  font-size: 18px;
+  font-weight: 500;
+  line-height: 27px;
+  letter-spacing: 0.02em;
+  text-align: center;
+  background-color: #0e0e0e;
+  color: #fff;
+}
+
+.create-account-btn {
+  height: 56px;
+  padding: 12px 8px 12px 8px;
+  gap: 8px;
+  border-radius: 32px;
+  font-family: "Poppins";
+  font-size: 18px;
+  font-weight: 500;
+  line-height: 27px;
+  letter-spacing: 0.02em;
+  text-align: center;
+  background-color: #ffff !important;
+  color: #000;
+}
+
+.login-input,
+.form-control {
+  height: 48px !important;
+  gap: 8px !important;
+  border-radius: 6px !important;
+  background-color: var(--clr-third) !important;
+}
+
+.form-label {
+  font-family: "Poppins";
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 21px;
+  letter-spacing: 0.02em;
+  text-align: left;
+}
+
+.forgot-password {
+  color: #e374ff;
+  text-decoration: none;
+}
+
+.phone-number-input-field {
+  width: 100%;
+}
+
+.phone-number-input-field input {
+  width: 100% !important;
+}
+
+@media only screen and (max-width: 576px) {
+  .login-box {
+    width: 100%;
+  }
+  .login-main-page {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+  .logo-place {
+    width: 100%;
+  }
+  .login-input,
+  .form-control {
+    width: 100% !important;
+  }
+  .create-account-btn {
+    width: 100%;
+  }
+  .login-btn {
+    width: 100%;
+  }
+}
+
+.phone-number-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  gap: 8px;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.country-code-select {
+  width: 80px;
+  height: 48px;
+  padding: 12px 8px;
+  border-radius: 6px;
+  background-color: var(--clr-third);
+  border: none;
+  font-family: "Poppins";
+  font-size: 14px;
+  color: #000;
+}
+
+.phone-input {
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+}
+
+.basic-info {
+  font-family: "Poppins";
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 21px;
+  text-align: left;
+  margin-top: 24px;
+  margin-bottom: 48px;
+}
+
+.remember-me-checkbox label {
+  font-family: "Poppins";
+  color: var(--input-text);
+  font-size: 12px;
+  font-weight: 500;
+  letter-spacing: 0.02em;
+}
+
+.remember-me-checkbox input[type="checkbox"] {
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  width: 20px;
+  height: 20px;
+  background-color: transparent;
+  /* Default unchecked background */
+  border: 2px solid #ccc;
+  /* Default border */
+  border-radius: 3px;
+  /* Optional: for rounded corners */
+  cursor: pointer;
+  position: relative;
+  -webkit-transition: all 0.2s ease;
+  transition: all 0.2s ease;
+  /* Smooth transition */
+  border-radius: 3px;
+}
+
+.remember-me-checkbox input[type="checkbox"]:checked {
+  background-color: transparent;
+  /* Checked background color */
+  border-color: var(--clr-primary);
+  /* Checked border color */
+  background-image: url("../../assets/images/Checkbox-icon.svg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: 12px 12px;
+  /* Adjust size of the SVG icon */
+}
+
+.number-with-conuntry-code {
+  background-color: var(--clr-third);
+  border-radius: 6px;
+  /* Remove the box-shadow on input and select focus */
+  /* Apply box-shadow when any child input or select is focused */
+}
+
+.number-with-conuntry-code input:focus,
+.number-with-conuntry-code select:focus {
+  -webkit-box-shadow: none !important;
+          box-shadow: none !important;
+}
+
+.number-with-conuntry-code:focus-within {
+  -webkit-box-shadow: 0 0 0 0.25rem rgba(16, 14, 14, 0.06) !important;
+          box-shadow: 0 0 0 0.25rem rgba(16, 14, 14, 0.06) !important;
+  /* Cleaned up the rgba color */
+}
+/*# sourceMappingURL=Login.css.map */

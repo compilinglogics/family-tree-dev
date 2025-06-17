@@ -1,0 +1,85 @@
+.bg_dark {
+  background-color: #0E0E0E;
+}
+
+.tree-card {
+  max-width: 190px;
+  width: 100%;
+}
+
+.tree-card .user-avatar {
+  border: 1.9px solid var(--clr-primary);
+  padding: 3px;
+  border-radius: 5px;
+  overflow: hidden;
+}
+
+.tree-card .user-avatar img {
+  height: 60px;
+  width: 60px;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
+.tree-card .user-avatar.isRhombus {
+  height: 35px;
+  width: 35px;
+  -webkit-transform: rotate(45deg);
+          transform: rotate(45deg);
+}
+
+.tree-card .user-avatar.isRhombus img {
+  -webkit-transform: rotate(-45deg);
+          transform: rotate(-45deg);
+  height: 100%;
+  width: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
+.tree-card .three-dot-button svg {
+  width: 20px;
+}
+
+.tree-card .card_content {
+  font-family: "Roboto", sans-serif;
+}
+
+.tree-card .card_content .user-name {
+  font-weight: 500;
+  line-height: 15px;
+  color: #0e0e0e;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.tree-card .card_content .address {
+  font-weight: 400;
+  color: #939393;
+}
+
+.tree-card .card_content .verified-icon {
+  width: 20px;
+  margin-left: 3px;
+}
+
+.tree-card.isDark .user-name,
+.tree-card.isDark .address {
+  color: #ffff;
+}
+
+.tree-card.isDark .three-dot-button svg circle {
+  fill: #ffff;
+}
+
+.tree-card.isDark .user-avatar {
+  border: 1.9px solid #ffff;
+}
+/*# sourceMappingURL=TreeCard.css.map */

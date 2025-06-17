@@ -1,0 +1,56 @@
+.request-card {
+  position: relative;
+  background-color: #fff;
+  border-radius: 16px;
+}
+
+.request-card .status-circle {
+  background-color: #0e0e0e;
+  display: inline-block;
+  border-radius: 50%;
+  width: 10px;
+  height: 10px;
+  position: absolute;
+  right: 0;
+}
+
+.request-card .request-avatar {
+  position: relative;
+  display: inline-block;
+}
+
+.request-card .request-avatar .userIcon {
+  position: absolute;
+  bottom: -6px;
+  right: -6px;
+}
+
+.request-card .request-detail .message {
+  color: #0E0E0E;
+  font-family: "Roboto", sans-serif;
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 14px;
+}
+
+.request-card .request-detail .time {
+  font-family: "Poppins", sans-serif;
+  font-size: 14px;
+  font-weight: 400;
+  color: #939393;
+}
+
+.request-card .request-detail button {
+  font-size: 14px;
+}
+
+.request-card .request-detail .reject-button {
+  background-color: #F3F3F3;
+  color: #0E0E0E;
+}
+
+.request-card .request-detail .accept-button {
+  background-color: #0E0E0E;
+  color: #FFFFFF;
+}
+/*# sourceMappingURL=RequestCard.css.map */

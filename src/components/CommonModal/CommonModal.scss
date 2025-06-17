@@ -1,0 +1,73 @@
+.common-modal {
+  .modal-content {
+    border-radius: 16px;
+    border: 0;
+  }
+  .content-box {
+    max-width: 450px;
+    width: 100%;
+    margin: 0 auto;
+  }
+  button.btn-close {
+    --bs-btn-close-color: #0e0e0e;
+    --bs-btn-close-opacity: 1;
+    height: 10px !important;
+    width: 10px !important;
+    box-sizing: border-box;
+    margin-top: 7px;
+  }
+  .title {
+    font-family: "Poppins", sans-serif;
+    font-weight: 500;
+    font-size: 24px;
+    color: #0e0e0e;
+  }
+  .sub-title {
+    font-family: "Poppins", sans-serif;
+    font-weight: 500;
+    font-size: 18px;
+    color: #939393;
+  }
+  .action-button {
+    font-family: "Poppins", sans-serif;
+    font-weight: 500;
+    font-size: 16px;
+    color: #939393;
+    border-bottom: 1px solid #0000000d;
+    cursor: pointer;
+  }
+  .cancel {
+    background-color: #f3f3f3;
+    color: #0e0e0e;
+  }
+  .cancel,
+  .submit {
+    font-family: "Poppins", sans-serif;
+    font-weight: 500;
+    font-size: 18px;
+    padding: 12px 8px 12px 8px;
+    background-color: #0e0e0e;
+  }
+  .success.modal-header {
+    position: relative;
+    justify-content: center;
+  }
+
+  .success.modal-header button.btn-close {
+    position: absolute;
+    right: 0;
+  }
+  .btn-close.custom-close-btn{
+    --bs-btn-close-color: #0e0e0e;
+    --bs-btn-close-opacity: 1;
+    height: 16px !important;
+    width: 16px !important;
+    box-sizing: border-box;
+    margin-top: 7px;
+  }
+  @media (min-width: 768px) {
+    .content-box.hideClose .modal-header .btn-close {
+      display: none; // Hide the element on larger screens
+    }
+  }
+}

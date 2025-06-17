@@ -1,0 +1,48 @@
+.stories-box {
+  gap: 35px;
+  overflow-x: scroll;
+  max-width: 1270px;
+  cursor: -webkit-grab;
+  cursor: grab;
+}
+
+.stories-box::-webkit-scrollbar {
+  display: none;
+}
+
+.stories-box .add-story.single-story {
+  font-weight: 500;
+  min-width: 82px;
+}
+
+.stories-box .single-story {
+  text-align: center;
+  width: 82px;
+  font-family: "Roboto", sans-serif;
+  font-size: 14px;
+  font-weight: 400;
+  color: var(--input-text);
+}
+
+.stories-box .single-story img {
+  height: 82px;
+  width: 100%;
+}
+
+.stories-box .single-story .user-image {
+  outline: 1px solid black;
+  height: 82px;
+  width: 100%;
+  overflow: hidden;
+  border: 4px solid #ffff;
+  border-radius: 50%;
+}
+
+.stories-box .single-story .user-image img {
+  -o-object-fit: cover;
+     object-fit: cover;
+  height: 100%;
+  width: 100%;
+  border-radius: 50%;
+}
+/*# sourceMappingURL=Stories.css.map */

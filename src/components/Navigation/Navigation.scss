@@ -1,0 +1,127 @@
+.navigation-container {
+  box-shadow: 0px 0px 10px 0px #0000000d;
+  display: flex;
+  flex-wrap: inherit;
+  align-items: center;
+  border-radius: 16px;
+  min-height: 80px;
+  .navigation-logo{
+    max-width: 100%;
+  }
+  .navigation-search {
+    max-width: 415px;
+    width: 100%;
+    background-image: url("../../assets/images/Nav-Search.svg");
+    background-size: 16px auto;
+    background-repeat: no-repeat;
+    background-position: 15px;
+    padding-left: 38px !important;
+    border: 1px solid #0000001A !important;
+    border-radius: 12px !important;
+    font-family: "Poppins", sans-serif;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 20px;
+    max-height: 46px;
+    &::placeholder {
+      color: var(--input-text);
+    }
+    &::-webkit-search-cancel-button {
+      -webkit-appearance: none;
+    }
+  }
+  .navigation-controls {
+    .nav-link {
+      .icon-container {
+        padding: 6px;
+        width: 45px;
+        margin: 0 auto;
+        &.icon {
+          img {
+            max-width: 18px;
+            
+          }
+        }
+        &.profile {
+          img {
+            max-width: 20px;
+            object-fit: cover;
+          }
+        }
+      }
+      .link-text {
+        font-family: "Poppins", sans-serif;
+        color: var(--input-text);
+        font-size: 12px;
+        font-weight: 500;
+        text-align: center;
+      }
+      .active-icon {
+        display: none;
+      }
+      .inactive-icon {
+        display: block;
+      }
+      &.active {
+        .icon-container {
+          background: #8484841a;
+        }
+        .link-text {
+          color: var(--clr-primary);
+        }
+        .active-icon {
+          display: block;
+        }
+        .inactive-icon {
+          display: none;
+        }
+      }
+      &:focus-visible {
+        box-shadow: none;
+      }
+    }
+  }
+  .coin-container {
+    position: relative;
+    height: 40px;
+    width: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    .image-1 {
+      position: absolute;
+      z-index: 1;
+    }
+    .image-2 {
+      position: absolute;
+    }
+    .image-3 {
+      position: absolute;
+      right: 4.8px;
+      width: 30px;
+    }
+  
+    .icon-container {
+      padding: 6px;
+    }
+    .coin-text {
+      display: flex;
+      align-items: center;
+      position: relative;
+      font-family: "Abhaya Libre", serif;
+      font-size: 10px;
+      font-weight: 800;
+      text-align: left;
+      color: #090909;
+      .pp-text {
+        font-family: "Abhaya Libre", serif;
+        font-size: 9px;
+        font-weight: 800;
+        text-align: left;
+      }
+    }
+  }
+  
+}
+
+

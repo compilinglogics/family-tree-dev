@@ -1,0 +1,13 @@
+[build]
+  functions = "netlify/functions" # Ensure your functions directory is correctly set
+
+[[redirects]]
+  from = "/api/*"
+  to = "/.netlify/functions/api-proxy/:splat"
+  status = 200
+  force = true
+
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 200

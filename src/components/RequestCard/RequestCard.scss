@@ -1,0 +1,64 @@
+.request-card {
+  position: relative;
+  background-color: #fff;
+  border-radius: 12px;
+  padding-top: 12px;
+  padding-bottom: 12px;
+  .status-circle {
+    background-color: #0e0e0e;
+    display: inline-block;
+    border-radius: 50%;
+    width: 8px;
+    height: 8px;
+    position: absolute;
+    right: 0;
+  }
+
+  .request-avatar {
+    position: relative;
+    display: inline-block;
+    .user {
+      height: 50px;
+      width: 50px;
+      object-fit: cover;
+    }
+    .userIcon {
+      position: absolute;
+      bottom: -4px;
+      right: -8px;
+      height: 28px;
+      width: 28px;
+    }
+  }
+  .request-detail {
+    display: flex;
+    flex-direction: column;
+    .message {
+      color: #0e0e0e;
+      font-family: "Roboto", sans-serif;
+      font-size: 16px;
+      // line-height: 20px;
+      font-weight: 500;
+    }
+    .time {
+      font-family: "Poppins", sans-serif;
+      font-size: 12px;
+      line-height: 16px;
+      font-weight: 400;
+      color: #939393;
+    }
+    button {
+      font-size: 14px;
+      font-family: "Poppins", sans-serif;
+      line-height: 1.6;
+    }
+    .reject-button {
+      background-color: #f3f3f3;
+      color: #0e0e0e;
+    }
+    .accept-button {
+      background-color: #0e0e0e;
+      color: #ffffff;
+    }
+  }
+}

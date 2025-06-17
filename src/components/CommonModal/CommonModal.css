@@ -1,0 +1,78 @@
+.common-modal .modal-content {
+  border-radius: 16px;
+  border: 0;
+}
+
+.common-modal .content-box {
+  max-width: 450px;
+  width: 100%;
+  margin: 0 auto;
+}
+
+.common-modal button.btn-close {
+  --bs-btn-close-color: #0e0e0e;
+  --bs-btn-close-opacity: 1;
+  height: 10px !important;
+  width: 10px !important;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  margin-top: 7px;
+}
+
+.common-modal .title {
+  font-family: "Poppins", sans-serif;
+  font-weight: 500;
+  font-size: 24px;
+  color: #0e0e0e;
+}
+
+.common-modal .sub-title {
+  font-family: "Poppins", sans-serif;
+  font-weight: 500;
+  font-size: 18px;
+  color: #939393;
+}
+
+.common-modal .action-button {
+  font-family: "Poppins", sans-serif;
+  font-weight: 500;
+  font-size: 16px;
+  color: #939393;
+  border-bottom: 1px solid #0000000d;
+  cursor: pointer;
+}
+
+.common-modal .cancel {
+  background-color: #f3f3f3;
+  color: #0e0e0e;
+}
+
+.common-modal .cancel,
+.common-modal .submit {
+  font-family: "Poppins", sans-serif;
+  font-weight: 500;
+  font-size: 18px;
+}
+
+.common-modal .success.modal-header {
+  position: relative;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.common-modal .success.modal-header button.btn-close {
+  position: absolute;
+  right: 0;
+}
+
+.common-modal .btn-close.custom-close-btn {
+  --bs-btn-close-color: #0e0e0e;
+  --bs-btn-close-opacity: 1;
+  height: 16px !important;
+  width: 16px !important;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  margin-top: 7px;
+}
+/*# sourceMappingURL=CommonModal.css.map */

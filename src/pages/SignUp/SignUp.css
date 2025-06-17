@@ -1,0 +1,41 @@
+.sign-up-section {
+  background-color: var(--clr-primary);
+  width: 100%;
+  min-height: 100vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.sign-up-box {
+  width: 568px;
+  background-color: var(--clr-secondary);
+  border-radius: 15px;
+  padding: 32px 44px;
+}
+
+.sign-up-heading {
+  font-family: "Poppins";
+  font-size: 24px;
+  font-weight: 500;
+  line-height: 36px;
+  text-align: center;
+}
+
+.search-select-icon input[type="text"] {
+  background-image: url("../../assets/images/SelectArrow.svg");
+  background-size: 15px auto;
+  background-repeat: no-repeat;
+  background-position: 98% 50%;
+}
+
+.search-select-icon input[type="text"]:focus {
+  border: none !important;
+}
+/*# sourceMappingURL=SignUp.css.map */

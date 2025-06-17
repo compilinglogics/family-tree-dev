@@ -1,0 +1,144 @@
+.navigation-container {
+  -webkit-box-shadow: 0px 0px 10px 0px #0000000d;
+          box-shadow: 0px 0px 10px 0px #0000000d;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: inherit;
+      flex-wrap: inherit;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  border-radius: 16px;
+}
+
+.navigation-container .navigation-logo {
+  min-width: 48px;
+  min-height: 40px;
+}
+
+.navigation-search {
+  max-width: 476px;
+  width: 100%;
+  background-image: url("../../assets/images/Nav-Search.svg");
+  background-size: 20px auto;
+  background-repeat: no-repeat;
+  background-position: 15px;
+  padding-left: 45px !important;
+  border: 1px solid rgba(0, 0, 0, 0.101961) !important;
+  border-radius: 12px !important;
+  font-family: "Poppins", sans-serif;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 20px;
+}
+
+.navigation-search::-webkit-input-placeholder {
+  color: var(--input-text);
+}
+
+.navigation-search:-ms-input-placeholder {
+  color: var(--input-text);
+}
+
+.navigation-search::-ms-input-placeholder {
+  color: var(--input-text);
+}
+
+.navigation-search::placeholder {
+  color: var(--input-text);
+}
+
+.navigation-search::-webkit-search-cancel-button {
+  -webkit-appearance: none;
+}
+
+.navigation-controls .nav-link .icon-container {
+  padding: 6px;
+  width: 56px;
+  margin: 0 auto;
+}
+
+.navigation-controls .nav-link .link-text {
+  font-family: "Poppins", sans-serif;
+  color: var(--input-text);
+  font-size: 12px;
+  font-weight: 500;
+  text-align: center;
+}
+
+.navigation-controls .nav-link .active-icon {
+  display: none;
+}
+
+.navigation-controls .nav-link .inactive-icon {
+  display: block;
+}
+
+.navigation-controls .nav-link.active .icon-container {
+  background: #8484841a;
+}
+
+.navigation-controls .nav-link.active .link-text {
+  color: var(--clr-primary);
+}
+
+.navigation-controls .nav-link.active .active-icon {
+  display: block;
+}
+
+.navigation-controls .nav-link.active .inactive-icon {
+  display: none;
+}
+
+.coin-container {
+  position: relative;
+  height: 48px;
+  width: 48px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.coin-container .image-1 {
+  position: absolute;
+  z-index: 1;
+}
+
+.coin-container .image-2 {
+  position: absolute;
+}
+
+.coin-container .image-3 {
+  position: absolute;
+  top: 6px;
+  right: 6px;
+}
+
+.coin-container .icon-container {
+  padding: 6px;
+}
+
+.coin-container .coin-text {
+  position: relative;
+  font-family: "Abhaya Libre", serif;
+  font-size: 12px;
+  font-weight: 800;
+  line-height: 14.16px;
+  text-align: left;
+}
+
+.coin-container .coin-text .pp-text {
+  font-family: "Abhaya Libre", serif;
+  font-size: 10px;
+  font-weight: 800;
+  line-height: 11.8px;
+  text-align: left;
+}
+/*# sourceMappingURL=Navigation.css.map */

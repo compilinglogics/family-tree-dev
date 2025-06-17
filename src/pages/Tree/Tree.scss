@@ -1,0 +1,64 @@
+// .tab-section {
+//   width: 100%;
+//   border-radius: 40px;
+//   border: 1px solid #0000000d;
+//   box-shadow: 0px 0px 10px 0px #0000000d;
+//   background-color: #ffffff;
+// }
+// .tab-section .nav-tabs .nav-item {
+//   width: 236px;
+//   height: 38px;
+//   padding: 12px 8px 12px 8px;
+//   border-radius: 32px;
+// }
+.navigation_buttons {
+  .nav-link {
+    font-family: "Poppins", sans-serif;
+    color: var(--clr-primary);
+    &.active {
+      color: #ffff;
+      background-color: var(--clr-primary);
+    }
+  }
+}
+
+.mt-95 {
+  margin-top: 95px;
+}
+
+.vertical-line-1 {
+  height: 1px;
+  background: black;
+
+  text-align: center;
+}
+.horizontal-line-1 {
+  height: 230px;
+  background: black;
+  width: 1px;
+  text-align: center;
+  margin: 0 auto;
+}
+.horizontal-line-2 {
+  height: 125px;
+  background: black;
+  width: 1px;
+  text-align: center;
+  margin: 0 auto;
+}
+.line-container-1 {
+  max-width: 900px;
+  margin: 0 auto;
+}
+.line-container-2 {
+  max-width: 700px;
+  margin: 0 auto;
+}
+.line-container-3 {
+  max-width: 700px;
+}
+@media (min-width: 1190px) {
+  .line-container-3 {
+    margin-left: 50px;
+  }
+}

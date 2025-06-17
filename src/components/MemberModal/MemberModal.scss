@@ -1,0 +1,67 @@
+.member-modal {
+  .modal-content {
+    border-radius: 16px;
+    border: 0;
+  }
+  .content-box {
+    max-width: 450px;
+    width: 100%;
+    margin: 0 auto;
+  }
+  .user-avatar {
+    border: 1.9px solid var(--clr-primary);
+    padding: 3px;
+    border-radius: 5px;
+    overflow: hidden;
+    img {
+      height: 60px;
+      width: 60px;
+      object-fit: cover;
+    }
+    &.isRhombus {
+      height: 35px;
+      width: 35px;
+      transform: rotate(45deg);
+      img {
+        transform: rotate(-45deg);
+        height: 100%;
+        width: 100%;
+        object-fit: cover;
+      }
+    }
+  }
+  .card_content {
+    font-family: "Roboto", sans-serif;
+
+    .user-name {
+      font-weight: 400;
+      font-size: 22px;
+      color: #0e0e0e;
+      display: flex;
+      align-items: center;
+      justify-content: start;
+    }
+    .address {
+      font-size: 16px;
+      font-weight: 400;
+      color: #939393;
+    }
+
+    .verified-icon {
+      width: 20px;
+      margin-left: 3px;
+    }
+  }
+  button.btn-close {
+    --bs-btn-close-color: #0e0e0e;
+    --bs-btn-close-opacity: 1;
+    height: 10px !important;
+    width: 10px !important;
+    box-sizing: border-box;
+    margin-top: 7px;
+  }
+  .action-button {
+    border-bottom: 1px solid #0000000d;
+    cursor: pointer;
+  }
+}

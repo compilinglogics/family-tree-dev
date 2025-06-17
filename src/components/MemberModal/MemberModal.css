@@ -1,0 +1,90 @@
+.member-modal .modal-content {
+  border-radius: 16px;
+  border: 0;
+}
+
+.member-modal .content-box {
+  max-width: 450px;
+  width: 100%;
+  margin: 0 auto;
+}
+
+.member-modal .user-avatar {
+  border: 1.9px solid var(--clr-primary);
+  padding: 3px;
+  border-radius: 5px;
+  overflow: hidden;
+}
+
+.member-modal .user-avatar img {
+  height: 60px;
+  width: 60px;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
+.member-modal .user-avatar.isRhombus {
+  height: 35px;
+  width: 35px;
+  -webkit-transform: rotate(45deg);
+          transform: rotate(45deg);
+}
+
+.member-modal .user-avatar.isRhombus img {
+  -webkit-transform: rotate(-45deg);
+          transform: rotate(-45deg);
+  height: 100%;
+  width: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
+.member-modal .card_content {
+  font-family: "Roboto", sans-serif;
+}
+
+.member-modal .card_content .user-name {
+  font-weight: 400;
+  font-size: 22px;
+  color: #0e0e0e;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: start;
+}
+
+.member-modal .card_content .address {
+  font-size: 16px;
+  font-weight: 400;
+  color: #939393;
+}
+
+.member-modal .card_content .verified-icon {
+  width: 20px;
+  margin-left: 3px;
+}
+
+.member-modal button.btn-close {
+  --bs-btn-close-color: #0e0e0e;
+  --bs-btn-close-opacity: 1;
+  height: 10px !important;
+  width: 10px !important;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  margin-top: 7px;
+}
+
+.member-modal .action-button {
+  font-family: "Poppins", sans-serif;
+  font-weight: 500;
+  font-size: 16px;
+  color: #939393;
+  border-bottom: 1px solid #0000000d;
+  cursor: pointer;
+}
+/*# sourceMappingURL=MemberModal.css.map */

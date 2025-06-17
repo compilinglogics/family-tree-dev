@@ -1,0 +1,49 @@
+.common-accordion{
+    
+    .accordion-item {
+        border-radius: 13px !important;
+        
+    }
+    .accordion-button{
+        font-family: "Poppins", sans-serif;
+        color: #0E0E0E;
+        font-weight: 500;
+        border-radius: 12px;
+        font-size: 18px;
+        justify-content: space-between;
+    }
+    .accordion-body{
+        font-family: "Poppins", sans-serif;
+        font-size: 18px;
+    }
+    .accordion-button.collapsed{
+       
+        color: #939393;
+        .arrow-btn{
+            transform: rotate(270deg);
+            background-color: #939393;
+        }
+    }
+    .arrow-btn{
+        line-height: 0;
+        height: 28px;
+        width: 28px;
+        padding: 0 7px !important;
+        transition: transform 0.3s;
+        border: none !important;
+    }
+    .accordion-button{
+        box-shadow: none;
+        .arrow-btn{
+            transform: rotate(90deg);
+             background-color: #0E0E0E;
+        }
+        &:not(.collapsed){
+            background-color: transparent;
+        }
+        &::after{
+            display: none;
+        }
+    }
+
+}

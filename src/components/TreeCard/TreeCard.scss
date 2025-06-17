@@ -1,0 +1,74 @@
+.bg_dark{
+    background-color: #0E0E0E;
+}
+.tree-card {
+  cursor: pointer;
+    max-width: 190px;
+    width: 100%;
+    .user-avatar {
+      border: 1.9px solid var(--clr-primary);
+      padding: 3px;
+      border-radius: 5px;
+      overflow: hidden;
+      img {
+        height: 60px;
+        width: 60px;
+        object-fit: cover;
+        background: #D8C7B6;
+      }
+      &.isRhombus {
+        height: 35px;
+        width: 35px;
+        transform: rotate(45deg);
+        img {
+          transform: rotate(-45deg);
+          height: 100%;
+          width: 100%;
+          object-fit: cover;
+        }
+      }
+    }
+    .three-dot-button {
+      svg {
+        width: 20px;
+      }
+    }
+    .card_content {
+      font-family: "Roboto", sans-serif;
+  
+      .user-name {
+        font-weight: 500;
+        line-height: 15px;
+        color: #0e0e0e;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+      }
+      .address {
+        font-weight: 400;
+        color: #939393;
+      }
+  
+      .verified-icon {
+        width: 20px;
+        margin-left: 3px;
+      }
+    }
+    &.isDark{
+        .user-name,
+        .address{
+            color: #ffff;
+        }
+        .three-dot-button {
+            svg {
+                circle{
+
+                    fill: #ffff;
+                }
+            }}
+            .user-avatar{
+                border: 1.9px solid #ffff;
+            }
+    }
+  }

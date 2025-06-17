@@ -1,0 +1,51 @@
+.post-first-line {
+  .avatar {
+    width: 38px;
+    height: 38px;
+    object-fit: cover;
+  }
+  .title {
+    font-family: "Poppins";
+  }
+  .post-btn {
+    height: 38px;
+    font-weight: 400 !important;
+    font-size: 14px;
+    font-family: "Poppins";
+    width: 120px;
+  }
+}
+.post-action {
+.image-actions{
+  cursor: pointer;
+}
+  .action-image {
+    img {
+      max-width: 25px;
+    }
+  }
+  .action-text {
+    font-size: 14px;
+    font-family: "Poppins";
+  }
+  .radios {
+    .form-check {
+      label {
+        font-family: Poppins;
+        font-size: 14px;
+        font-weight: 400;
+
+        color: #939393;
+      }
+    }
+  }
+}
+
+.action-top-line{
+  background: #E5E5E5;
+  padding: 3.5px;
+  border-radius: 5px;
+  display: block;
+  margin: 0 auto;
+  max-width: 52px;
+}
