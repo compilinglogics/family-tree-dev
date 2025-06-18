@@ -84,61 +84,7 @@ const CreatePost = () => {
   const [audioBlob, setAudioBlob] = useState(null)
   const [audioUrl, setAudioUrl] = useState(null)
 
-  const handleChange = (event) => {
-    const { name, type, files, value } = event.target
-
-    if (type === "file") {
-      if (name === "images") {
-        // Handle multiple image uploads
-        const fileArray = Array.from(files)
-        const previewArray = fileArray.map((file) => URL.createObjectURL(file))
-
-        setFormData((prev) => ({
-          ...prev,
-          images: [...prev.images, ...fileArray], // Store image files
-        }))
-
-        setImagePreviews((prev) => [...prev, ...previewArray]) // Store image previews
-      } else if (name === "video") {
-        // Handle single video upload
-        const file = files[0]
-
-        setFormData((prev) => ({
-          ...prev,
-          video: file, // Store video file
-        }))
-
-        setVideoPreview(URL.createObjectURL(file)) // Store video preview
-      } else {
-        // Handle other file uploads (if needed)
-        setFormData((prev) => ({
-          ...prev,
-          [name]: files[0], // Store single file (e.g., audio)
-        }))
-      }
-    } else {
-      // Handle text input, select fields, etc.
-      setFormData((prev) => ({
-        ...prev,
-        [name]: value,
-      }))
-    }
-  }
-
-  // Remove selected image
-  const removeImage = (index) => {
-    const newImages = formData.images.filter((_, i) => i !== index)
-    const newPreviews = imagePreviews.filter((_, i) => i !== index)
-
-    setFormData((prev) => ({ ...prev, images: newImages }))
-    setImagePreviews(newPreviews)
-  }
-
-  // Remove video
-  const removeVideo = () => {
-    setFormData((prev) => ({ ...prev, video: null }))
-    setVideoPreview(null)
-  }
+ 
 
   const handleSubmit = async (text) => {
     setBtnDisable(true)
