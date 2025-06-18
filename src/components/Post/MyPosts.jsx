@@ -22,7 +22,37 @@ const MyPosts = ({list}) => {
   const [list2, setlist] = useState([])
   const user = JSON.parse(localStorage.getItem("user"));
 
+  const callApiGetData = async () => {
+    try {
+      // const response = await getAllPost("6716b6c43e3566cc3a147b07");
+      const response = await getAllMyPosts(user._id);
+      console.log("response", response);
+      if (response.success) {
+        setlist(response.posts)
+      }
+      console.log("response", response);
+    } catch (error) {
+      console.error("Error verifying OTP:", error);
+      toast.error(error?.message);
+    }
+  };
 
+  useEffect(() => {
+    callApiGetData()
+  }, [])
+
+  function formatDate(dateString) {
+    const date = new Date(dateString);
+    let hours = date.getHours();
+    const minutes = date.getMinutes();
+    const ampm = hours >= 12 ? 'PM' : 'AM';
+    hours = hours % 12 || 12;
+    const formattedMinutes = minutes.toString().padStart(2, '0');
+    const day = date.getDate().toString().padStart(2, '0');
+    const month = (date.getMonth() + 1).toString().padStart(2, '0'); // Month is 0-indexed
+    const year = date.getFullYear();
+    return `${hours}:${formattedMinutes} ${ampm} ${day}/${month}/${year}`;
+  }
 
   return (
     <div className="pb-3">
