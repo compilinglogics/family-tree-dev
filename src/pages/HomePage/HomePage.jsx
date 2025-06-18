@@ -10,6 +10,7 @@ import Post from "../../components/Post/Post";
 
 const HomePage = () => {
 
+  const [cookiesModal, setCookiesModal] = useState(false);
 
   return (
     <div className="min-h-screen">
