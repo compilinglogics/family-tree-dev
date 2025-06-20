@@ -54,7 +54,7 @@ const Tree = () => {
             </span>
 
             {
-              allRequests.map((item) => (
+              allRequests?.map((item) => (
                 <RequestCard title={`${item?.requesting_user?.fullName} is inviting you, as a ${item?.relationship_type}, to be included in the family tree.`} user={item} profileImg={item?.profileImageUrl}  getApi={callApiGetData} />
               ))
             }
