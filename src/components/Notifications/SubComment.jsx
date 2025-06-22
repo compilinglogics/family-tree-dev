@@ -31,7 +31,7 @@ export default function SubComment() {
             </span>
             {
                 allRequests
-                    .slice().reverse()
+                    ?.slice().reverse()
                     .map((item) => (
                         <SubCommentRequestCard item={item} getApi={callApiGetData} showModel />
                         // <RequestCard title={`${item?.fullName} is inviting you, as a ${item?.relation}, to be included in the family tree.`} user={item} profileImg={item?.profileImageUrl} subTitle='6 hours ago' getApi={callApiGetData} />

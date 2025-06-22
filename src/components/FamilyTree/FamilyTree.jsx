@@ -28,7 +28,10 @@ const MyFamilyTree = ({
   const filterNodes = (nodes) => {
     const allIds = nodes.map(item => item.id);
     nodes.forEach(item => {
-      item.pids = [...new Set(item.pids.filter(pid => allIds.includes(pid)))];
+      item.pids = Array.isArray(item.pids)
+  ? [...new Set(item.pids.filter(pid => pid != null && allIds.includes(pid)))]
+  : [];
+
     });
 
     return nodes

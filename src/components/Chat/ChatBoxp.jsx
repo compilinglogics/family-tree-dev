@@ -7,6 +7,7 @@ import { BsEmojiSmile } from "react-icons/bs";
 import { fetchAllMessages } from "../../utils/chatApi";
 import { uploadImage } from "../../utils/cloudImageUpload"; // Image Upload
 import ChatUserDetails from "./ChatUserDetails";
+import AdminStatusBadge from "./AdminStatusBadge"; // update path as needed
 
 function ChatBox({ user }) {
   const socketRef = useRef();
@@ -117,25 +118,28 @@ function ChatBox({ user }) {
   return (
     <div className="container my-4 d-flex justify-content-between flex-column h-100">
       <ChatUserDetails user={user} />
-      <div
-        className="chat-box w-100"
-        ref={chatBoxRef}
-        style={{
-          maxHeight: "70vh",
-          overflowY: "auto",
-        }}
-      >
-        {messages.map((msg, index) => (
-          <ChatMessage
-            key={index}
-            message={msg.text}
-            imageUrl={msg.imageUrl}
-            isSender={msg.msgByUserId === storedUser?._id}
-            avatar="https://via.placeholder.com/40"
-            onClickImage={() => setPreviewImage(msg.imageUrl)}
-          />
-        ))}
-      </div>
+{socketRef.current && <AdminStatusBadge socket={socketRef.current} />}
+
+<div
+  className="chat-box w-100"
+  ref={chatBoxRef}
+  style={{
+    maxHeight: "70vh",
+    overflowY: "auto",
+  }}
+>
+  {messages.map((msg, index) => (
+    <ChatMessage
+      key={index}
+      message={msg.text}
+      imageUrl={msg.imageUrl}
+      isSender={msg.msgByUserId === storedUser?._id}
+      avatar="https://via.placeholder.com/40"
+      onClickImage={() => setPreviewImage(msg.imageUrl)}
+    />
+  ))}
+</div>
+
 
       <div className="card-footer p-3 w-100">
         {/* Image Preview - Left Side */}

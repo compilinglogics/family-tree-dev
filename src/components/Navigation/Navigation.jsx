@@ -45,14 +45,19 @@ const Navigation = () => {
 
   // Fetch family data
   const [familyData, setFamilyData] = useState([]);
-  const fetchFamilyData = async () => {
-    try {
-      const data = await familyTree(user._id);
-      setFamilyData(data.relatives);
-    } catch (error) {
-      console.error("Failed to fetch family data:", error);
+ const fetchFamilyData = async () => {
+  try {
+    if (!user?._id) {
+      console.warn("User ID is undefined, skipping fetch");
+      return;
     }
-  };
+    const data = await familyTree(user._id);
+    setFamilyData(data.relatives);
+  } catch (error) {
+    console.error("Failed to fetch family data:", error);
+  }
+};
+
 
   const NewUser = async () => {
     try {
