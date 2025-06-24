@@ -45,7 +45,7 @@ const CookiePopup = () => {
         >
             <b>🍪 We use cookies!</b> <br />
             This website uses cookies to improve your experience.  
-            <a href="/privacy-policy" style={{ color: "#007bff", textDecoration: "none" }}> Learn more</a>.
+            <a href="/cookie" style={{ color: "#007bff", textDecoration: "none" }}> Learn more</a>.
         </CookieConsent>
     );
 };

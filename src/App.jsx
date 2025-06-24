@@ -31,6 +31,7 @@ import { store } from "./store/store";
 import UpdatePost from "./pages/CreatePost/UpdatePost";
 import UserProfile from "./components/Profile/UserProfile";
 import CookiePopup from "./components/Policy/CookiePopup";
+import Cookie from "./components/Policy/Cookie";
 import UserPost from "./components/Post/UserPost";
 import SinglePost from "./components/Post/SinglePost";
 // import FamilyTreeComponent from "./pages/FamilyTree/FamilyTreeComponent";
@@ -108,6 +109,10 @@ function App() {
         {
           path: "/privacy-policy",
           element: <PrivacyPolicy/>,
+        },
+        {
+          path: "/cookie",
+          element: <Cookie/>,
         },
         {
           path: "/calendar",
