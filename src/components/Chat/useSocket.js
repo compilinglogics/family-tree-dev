@@ -8,7 +8,7 @@ const useSocket = () => {
   const socketRef = useRef();
   // Use the WebSocket endpoint, not the API endpoint
   // const BASE_URL = 'wss://fapi.fanzaty.net'; // Note the 'wss://' protocol
-  const BASE_URL = "http://157.173.222.27:3002";
+  const BASE_URL = "https://backend.rmmbr.me";
 
   const dispatch = useDispatch();
 

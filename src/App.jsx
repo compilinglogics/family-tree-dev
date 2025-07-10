@@ -110,10 +110,10 @@ function App() {
           path: "/privacy-policy",
           element: <PrivacyPolicy/>,
         },
-        {
-          path: "/cookie",
-          element: <Cookie/>,
-        },
+        // {
+        //   path: "/cookie",
+        //   element: <Cookie/>,
+        // },
         {
           path: "/calendar",
           element: <Calender/>,
@@ -157,6 +157,10 @@ function App() {
     {
       path: "/cookie-policy",
       element: <Policy />,
+    },
+    {
+      path: "/cookie",
+      element: <Cookie />,
     },
     {
       path: "/tree-app/:id",

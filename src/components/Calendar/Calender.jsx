@@ -24,7 +24,7 @@ const Calender = () => {
   const imageData3 = [
     {
       imagesUrl:
-        "http://157.173.222.27:3002/api/v1/post/get-file/0010-Flux_Dev_A_majestic_digital_painting_of_Lord_Shiva_sitting_in__1.jpeg",
+        "https://backend.rmmbr.me/api/v1/post/get-file/0010-Flux_Dev_A_majestic_digital_painting_of_Lord_Shiva_sitting_in__1.jpeg",
       date: "2025-02-28T16:57:40.553Z",
     },
     { imagesUrl: date4oct2024Image, date: "2025-03-02" },

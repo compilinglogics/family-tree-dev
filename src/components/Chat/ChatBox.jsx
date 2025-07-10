@@ -20,8 +20,8 @@ function ChatBox({ user }) {
 
   // const BASE_URL = import.meta.env.CHAT_URL; // WebSocket endpoint
   // const BASE_URL = "http://localhost:8000";  // WebSocket endpoint
-  const BASE_URL = "http://157.173.222.27:3002/"; // WebSocket endpoint
-  // const BASE_URL = "http://3.133.136.217:8000";  // WebSocket endpoint
+  // const BASE_URL = "http://157.173.222.27:3002/"; // WebSocket endpoint
+  const BASE_URL = "https://backend.rmmbr.me/";  // WebSocket endpoint
   const dispatch = useDispatch();
   const token = getLocalStorageData("token");
   const savedUserDetails = getLocalStorageData("user");

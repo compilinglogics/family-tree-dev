@@ -8,7 +8,7 @@ const PrivacyPolicy = () => {
 
   const fetchPrivacy = async () => {
     try {
-      const res = await axios.get("http://157.173.222.27:3002/api/v1/policy/get/privacy");
+      const res = await axios.get("https://backend.rmmbr.me/api/v1/policy/get/privacy");
       const htmlContent = res?.data?.data?.content || "";
       setContent(htmlContent);
     } catch (err) {
