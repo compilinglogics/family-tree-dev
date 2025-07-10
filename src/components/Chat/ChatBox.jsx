@@ -18,7 +18,7 @@ function ChatBox({ user }) {
   const [isUploading, setIsUploading] = useState(false);
   const [previewImage, setPreviewImage] = useState(null); // Fullscreen Image Preview
 
-  // const BASE_URL = import.meta.env.CHAT_URL; // WebSocket endpoint
+  // const BASE_URL = import.meta.env.CHAT_URL; // WebSocket endpoint?/
   // const BASE_URL = "http://localhost:8000";  // WebSocket endpoint
   // const BASE_URL = "http://157.173.222.27:3002/"; // WebSocket endpoint
   const BASE_URL = "https://backend.rmmbr.me/";  // WebSocket endpoint
