@@ -76,6 +76,7 @@ const MyFamilyTree = ({
       roots: [nodes[0].id],
       zoom: false,
       scaleInitial: FamilyTree.match.boundary,
+      enableSearch: false,
     });
 
     const highlightedNode = nodes.find((node) => node.id === highlighted);
@@ -165,6 +166,15 @@ const MyFamilyTree = ({
       paginateChildren("next");
     };
 
+    const resizeObserver = new ResizeObserver(() => {
+        family.draw(); // Or family.resize() depending on the library version/API
+        family.fit();
+    });
+
+    if (divRef.current) {
+        resizeObserver.observe(divRef.current);
+    }
+
     return () => {
       delete window.handleMenuClick;
       delete window.handleAdd;
@@ -172,6 +182,7 @@ const MyFamilyTree = ({
       delete window.handleNext;
       delete window.handlePrevPage;
       delete window.handleNextPage;
+      resizeObserver.disconnect();
     };
   }, [nodes]);
 
