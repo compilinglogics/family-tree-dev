@@ -76,6 +76,7 @@ const MyFamilyTree = ({
       roots: [nodes[0].id],
       zoom: false,
       scaleInitial: FamilyTree.match.boundary,
+      enableSearch: false,
     });
 
     const highlightedNode = nodes.find((node) => node.id === highlighted);
