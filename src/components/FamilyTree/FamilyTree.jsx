@@ -79,25 +79,30 @@ const MyFamilyTree = ({
       enableSearch: false,
     });
 
-    const highlightedNode = nodes.find((node) => node.id === highlighted);
-    family.on("field", (sender, args) => {
-      if (args.name == "html") {
-        const isPartner = highlightedNode.pids.includes(args.data.id);
-        args.value = common({
-          ...args.data,
-          isCurrent: args.data.id == user?._id,
-          highlighted: args.data.id == highlighted,
-          prevPartner: isPartner ? prePartner : undefined,
-          nextPartner: isPartner ? nextPartner : undefined,
-          prevChildren,
-          nextChildren,
-          paginateChildren,
-          prevIdx,
-          nextIdx,
-          childrenLen,
-        });
-      }
+   const highlightedNode = nodes.find((node) => node.id === highlighted);
+family.on("field", (sender, args) => {
+  if (args.name == "html") {
+    const isHighlighted = args.data.id === highlighted;
+
+    args.value = common({
+      ...args.data,
+      isCurrent: args.data.id == user?._id,
+      highlighted: isHighlighted,
+
+      // ✅ use node’s own pagination info, but force props only for highlighted
+      prevPartner: isHighlighted ? prePartner || args.data.prevPartner : args.data.prevPartner,
+      nextPartner: isHighlighted ? nextPartner || args.data.nextPartner : args.data.nextPartner,
+
+      prevChildren,
+      nextChildren,
+      paginateChildren,
+      prevIdx,
+      nextIdx,
+      childrenLen,
     });
+  }
+});
+
 
 
     family.onNodeClick((args) => {
@@ -142,19 +147,19 @@ const MyFamilyTree = ({
       onAdd(true);
     };
 
-    window.handlePrev = () => {
-      event.stopPropagation();
-      if (prePartner !== undefined) {
-        setPartner(prePartner);
-      }
-    };
+   window.handlePrev = (partnerId) => {
+  event.stopPropagation();
+  if (partnerId) {
+    setPartner(partnerId);   // call API or state update with the passed id
+  }
+};
 
-    window.handleNext = () => {
-      event.stopPropagation();
-      if (nextPartner !== undefined) {
-        setPartner(nextPartner);
-      }
-    };
+window.handleNext = (partnerId) => {
+  event.stopPropagation();
+  if (partnerId) {
+    setPartner(partnerId);
+  }
+};
 
     window.handlePrevPage = () => {
       event.stopPropagation();

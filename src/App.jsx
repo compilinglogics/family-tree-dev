@@ -54,6 +54,15 @@ function App() {
           path: "/tree",
           element: <Tree />,
         },
+
+        {
+        path: "/tree/:id",
+        element: <Tree />,   // or <FamilyTreeApp /> if that’s the one fetching tree data
+        },
+
+      
+
+
         // {
         //   path: "/tree-app/:userId",
         //   element: <FamilyTreeComponent />,

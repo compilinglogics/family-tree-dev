@@ -47,6 +47,94 @@
 //     stroke-width: 2;
 //   }
 
+
+/* Add these styles to your FamilyTree.scss file */
+
+/* Enhanced button focus styles */
+.pagination button {
+  outline: none;
+  transition: all 0.2s ease;
+  cursor: pointer;
+  border: 2px solid transparent;
+  border-radius: 4px;
+}
+
+.pagination button:focus {
+  border-color: #2196F3;
+  box-shadow: 0 0 0 2px rgba(33, 150, 243, 0.3);
+  outline: none;
+}
+
+.pagination button:focus:not(:focus-visible) {
+  border-color: transparent;
+  box-shadow: none;
+}
+
+.pagination button:focus-visible {
+  border-color: #2196F3;
+  box-shadow: 0 0 0 2px rgba(33, 150, 243, 0.3);
+}
+
+/* Hover states */
+.pagination button:hover:not(:disabled) {
+  background-color: rgba(0, 0, 0, 0.1);
+  transform: scale(1.05);
+}
+
+/* Disabled states */
+.pagination button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.pagination button.disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+  pointer-events: none;
+}
+
+/* Active states */
+.pagination button:active {
+  transform: scale(0.95);
+}
+
+/* Partner pagination specific styles */
+.partner-pagination {
+  display: flex;
+  gap: 10px;
+  justify-content: center;
+  margin: 5px 0;
+}
+
+/* Children pagination specific styles */
+.children-pagination {
+  display: flex;
+  justify-content: center;
+  margin: 5px 0;
+}
+
+/* SVG icon styles within buttons */
+.pagination button svg {
+  pointer-events: none;
+  transition: stroke 0.2s ease;
+}
+
+.pagination button:focus svg {
+  stroke: #2196F3;
+}
+
+/* Ensure buttons are accessible */
+.pagination button {
+  min-width: 40px;
+  min-height: 40px;
+  padding: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: transparent;
+  border: none;
+  border-radius: 6px;
+}
   
 
 
@@ -57,13 +145,17 @@
   background-color: white;
   border-radius: 15px;
   border: 1px solid rgba(0, 0, 0, 0.1);
-  position: relative;
   box-shadow: 0 0 5px rgba(0, 0, 0, 0.05);
-  flex-direction: column;
-  justify-items: center;
   padding: 14px;
   box-sizing: border-box;
   transition: all 0.3s ease;
+}
+
+.family-inner {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 }
 
 /* Image Container Styles */
@@ -116,7 +208,7 @@
 
 /* Menu Icon Styles */
 .family-node .menu-icon {
-  position: absolute;
+  position: fixed;
   top: 15px;
   right: 10px;
   cursor: pointer;
@@ -228,10 +320,9 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  position: relative;
   bottom: 0;
   width: 100%;
-  padding: 10px;
+  padding: 3px;
 }
 
 button.prev-button,
@@ -288,4 +379,14 @@ span.pagination-span {
   display: flex;
   justify-content: center;
   align-items: center;
+}
+
+.family-node .pagination.always-visible {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 6px;
+}
+.family-node .pagination button.disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
 }

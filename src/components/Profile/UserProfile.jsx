@@ -287,14 +287,21 @@ const ProfilePage = () => {
             </div>
           )}
 
-          {/* Follow/Unfollow Button */}
+          {/* Follow/Unfollow Button + Tree Icon */}
           {shouldShowFollowButton() && (
-            <button
-              className={`btn btn-sm ${isFollowing ? "btn-outline-dark" : "btn-dark"} mt-2`}
-              onClick={handleFollowToggle}
-            >
-              {isFollowing ? "👤➖ Unfollow" : "👤➕ Follow"}
-            </button>
+          <div className="d-flex align-items-center justify-content-center gap-2 mt-2">
+          <button
+          className={`btn btn-sm ${isFollowing ? "btn-outline-dark" : "btn-dark"}`}
+          onClick={handleFollowToggle}
+          >
+          {isFollowing ? "👤➖ Unfollow" : "👤➕ Follow"}
+          </button>
+
+          {/* Tree Icon */}
+          <Link to={`/tree/${user._id}`} className="btn btn-light btn-sm rounded-circle shadow-sm">
+          🌳
+          </Link>
+          </div>
           )}
         </div>
 
