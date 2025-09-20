@@ -69,47 +69,6 @@ const common = (args) => {
       ? verifiedArgs.dob.getFullYear()
       : "Undefined";
   };
-// If non-binary → use pure SVG (diamond shape)
-  if (verifiedArgs.gender === "non-binary") {
-    return `
-   <svg width="180" height="250">
-  <defs>
-    <clipPath id="diamond-clip-${verifiedArgs.id}">
-      <polygon points="90,0 180,90 90,180 0,90"/>
-    </clipPath>
-  </defs>
-
-  <rect x="0" y="0" width="180" height="250" rx="15" ry="15" fill="white" />
-
-  <!-- Diamond + image, smaller and higher -->
-  <g transform="translate(90,70) scale(0.52) translate(-90,-90)">
-    <polygon points="90,10 170,90 90,170 10,90" 
-             fill="#e0f7fa" stroke="#666" stroke-width="2"/>
-    <image href="${verifiedArgs.image_url}" 
-           x="0" y="0" width="180" height="180" 
-           clip-path="url(#diamond-clip-${verifiedArgs.id})" 
-           preserveAspectRatio="xMidYMid slice"/>
-  </g>
-
-  <!-- Text shifted up accordingly -->
-  <text x="90" y="150" font-size="14" text-anchor="middle">
-    ${
-      verifiedArgs.fullname.length > 12
-        ? verifiedArgs.fullname.substring(0, 12) + "..."
-        : verifiedArgs.fullname
-    }
-  </text>
-  <text x="90" y="170" font-size="12" text-anchor="middle">
-    ${getVerifiedYear()}, ${verifiedArgs.city}
-  </text>
-  <text x="90" y="190" font-size="12" text-anchor="middle">
-    ${verifiedArgs.country}
-  </text>
-</svg>
-
-
-    `;
-  }
 
   const html = `
   <foreignobject x="0" y="0" width="180" height="250">

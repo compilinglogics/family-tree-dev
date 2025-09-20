@@ -107,6 +107,7 @@ import { useEffect, useState } from "react"
 import { Link, useNavigate, useParams } from "react-router-dom"
 import { getUserById } from "../../utils/Api"
 import { FollowUser } from "../../utils/followApi"
+import TreeDark from "../../assets/icons/navigation/bold/tree.svg";
 import { toast } from "react-toastify"
 
 const ProfilePage = () => {
@@ -299,7 +300,14 @@ const ProfilePage = () => {
 
           {/* Tree Icon */}
           <Link to={`/tree/${user._id}`} className="btn btn-light btn-sm rounded-circle shadow-sm">
-          🌳
+          <img
+          src={TreeDark}
+          alt="treeIcon"
+          style={{
+          width: 'auto',
+          objectFit: 'contain'
+          }}
+          />
           </Link>
           </div>
           )}

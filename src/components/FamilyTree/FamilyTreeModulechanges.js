@@ -21,6 +21,28 @@ FamilyTree.templates.myTemplate_non_binary = Object.assign(
 const BASE_URL = import.meta.env.VITE_API_URL;
 
 // -------------------------------
+// Inject a single global <clipPath> (only once)
+// -------------------------------
+const ensureClipPath = () => {
+  if (!document.getElementById("diamondClip")) {
+    const svgDefs = document.createElementNS("http://www.w3.org/2000/svg", "svg");
+    svgDefs.setAttribute("width", "0");
+    svgDefs.setAttribute("height", "0");
+    svgDefs.style.position = "absolute";
+
+    svgDefs.innerHTML = `
+      <defs>
+        <clipPath id="diamondClip" clipPathUnits="objectBoundingBox">
+          <polygon points="0.5 0, 1 0.5, 0.5 1, 0 0.5" />
+        </clipPath>
+      </defs>
+    `;
+    document.body.appendChild(svgDefs);
+  }
+};
+ensureClipPath();
+
+// -------------------------------
 // Helper to inject partner pagination
 // -------------------------------
 export const enrichRelatives = (response) => {
@@ -69,47 +91,23 @@ const common = (args) => {
       ? verifiedArgs.dob.getFullYear()
       : "Undefined";
   };
-// If non-binary → use pure SVG (diamond shape)
-  if (verifiedArgs.gender === "non-binary") {
-    return `
-   <svg width="180" height="250">
-  <defs>
-    <clipPath id="diamond-clip-${verifiedArgs.id}">
-      <polygon points="90,0 180,90 90,180 0,90"/>
-    </clipPath>
-  </defs>
 
-  <rect x="0" y="0" width="180" height="250" rx="15" ry="15" fill="white" />
-
-  <!-- Diamond + image, smaller and higher -->
-  <g transform="translate(90,70) scale(0.52) translate(-90,-90)">
-    <polygon points="90,10 170,90 90,170 10,90" 
-             fill="#e0f7fa" stroke="#666" stroke-width="2"/>
-    <image href="${verifiedArgs.image_url}" 
-           x="0" y="0" width="180" height="180" 
-           clip-path="url(#diamond-clip-${verifiedArgs.id})" 
-           preserveAspectRatio="xMidYMid slice"/>
-  </g>
-
-  <!-- Text shifted up accordingly -->
-  <text x="90" y="150" font-size="14" text-anchor="middle">
-    ${
-      verifiedArgs.fullname.length > 12
-        ? verifiedArgs.fullname.substring(0, 12) + "..."
-        : verifiedArgs.fullname
-    }
-  </text>
-  <text x="90" y="170" font-size="12" text-anchor="middle">
-    ${getVerifiedYear()}, ${verifiedArgs.city}
-  </text>
-  <text x="90" y="190" font-size="12" text-anchor="middle">
-    ${verifiedArgs.country}
-  </text>
-</svg>
-
-
-    `;
-  }
+  // Build image block differently for non-binary
+  const imageBlock =
+    verifiedArgs.gender === "non_binary"
+      ? `
+      <div class="image-container">
+        <img src="${verifiedArgs.image_url}" 
+             alt="Profile Image" 
+             class="profile-img" 
+             style="clip-path:url(#diamondClip);" />
+      </div>
+      `
+      : `
+      <div class="image-container">
+        <img src="${verifiedArgs.image_url}" alt="Profile Image" class="profile-img" />
+      </div>
+      `;
 
   const html = `
   <foreignobject x="0" y="0" width="180" height="250">
@@ -118,11 +116,10 @@ const common = (args) => {
       ${verifiedArgs.highlighted ? "highlighted" : ""} 
       ${verifiedArgs.isLinked ? "linked" : ""}">
       
-      <div class="family-inner">
-        <div class="image-container">
-          <img src="${verifiedArgs.image_url}" alt="Profile Image" class="profile-img" />
-        </div>
+      <!-- avatar container OUTSIDE family-inner -->
+      ${imageBlock}
 
+      <div class="family-inner">
         <div class="name">
           <p>${
             verifiedArgs.fullname.length > 12
@@ -150,34 +147,34 @@ const common = (args) => {
           <div class="pagination">
             <!-- Prev -->
             <div class="pag-btn">
-            <button class="prev-button ${
-              verifiedArgs.prevPartner ? "" : "disabled"
-            }"
-              ${
-                verifiedArgs.prevPartner
-                  ? `onclick="handlePrev('${verifiedArgs.prevPartner}')"`
-                  : "disabled"
-              }>
-              <svg width="20" height="20" viewBox="0 0 24 24">
-                <path d="M15 19L8 12L15 5" stroke="#555" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-              </svg>
-            </button>
+              <button class="prev-button ${
+                verifiedArgs.prevPartner ? "" : "disabled"
+              }"
+                ${
+                  verifiedArgs.prevPartner
+                    ? `onclick="handlePrev('${verifiedArgs.prevPartner}')"`
+                    : "disabled"
+                }>
+                <svg width="20" height="20" viewBox="0 0 24 24">
+                  <path d="M15 19L8 12L15 5" stroke="#555" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+              </button>
             </div>
 
             <!-- Next -->
             <div class="pag-btn">
-            <button class="next-button ${
-              verifiedArgs.nextPartner ? "" : "disabled"
-            }"
-              ${
-                verifiedArgs.nextPartner
-                  ? `onclick="handleNext('${verifiedArgs.nextPartner}')"`
-                  : "disabled"
-              }>
-              <svg width="20" height="20" viewBox="0 0 24 24">
-                <path d="M9 19L16 12L9 5" stroke="#555" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-              </svg>
-            </button>
+              <button class="next-button ${
+                verifiedArgs.nextPartner ? "" : "disabled"
+              }"
+                ${
+                  verifiedArgs.nextPartner
+                    ? `onclick="handleNext('${verifiedArgs.nextPartner}')"`
+                    : "disabled"
+                }>
+                <svg width="20" height="20" viewBox="0 0 24 24">
+                  <path d="M9 19L16 12L9 5" stroke="#555" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+              </button>
             </div>
           </div>
           `
@@ -186,8 +183,12 @@ const common = (args) => {
 
         ${
           verifiedArgs.isCurrent
-          ? '<span class="add-icon pb-2" onclick="handleAdd(\'' + verifiedArgs.id +'\')" onTouchStart="handleAdd(\'' + verifiedArgs.id +'\')"><svg width="25" height="24" x="68" y="168" text-anchor="start" viewBox="0 0 25 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M12.2207 0C5.6087 0 0.220703 5.388 0.220703 12C0.220703 18.612 5.6087 24 12.2207 24C18.8327 24 24.2207 18.612 24.2207 12C24.2207 5.388 18.8327 0 12.2207 0ZM17.0207 12.9H13.1207V16.8C13.1207 17.292 12.7127 17.7 12.2207 17.7C11.7287 17.7 11.3207 17.292 11.3207 16.8V12.9H7.4207C6.9287 12.9 6.5207 12.492 6.5207 12C6.5207 11.508 6.9287 11.1 7.4207 11.1H11.3207V7.2C11.3207 6.708 11.7287 6.3 12.2207 6.3C12.7127 6.3 13.1207 6.708 13.1207 7.2V11.1H17.0207C17.5127 11.1 17.9207 11.508 17.9207 12C17.9207 12.492 17.5127 12.9 17.0207 12.9Z" fill="#00B147"/></svg></span>'
-          : ""
+            ? '<span class="add-icon pb-2" onclick="handleAdd(\'' +
+              verifiedArgs.id +
+              '\')" onTouchStart="handleAdd(\'' +
+              verifiedArgs.id +
+              '\')"><svg width="25" height="24" x="68" y="168" text-anchor="start" viewBox="0 0 25 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M12.2207 0C5.6087 0 0.220703 5.388 0.220703 12C0.220703 18.612 5.6087 24 12.2207 24C18.8327 24 24.2207 18.612 24.2207 12C24.2207 5.388 18.8327 0 12.2207 0ZM17.0207 12.9H13.1207V16.8C13.1207 17.292 12.7127 17.7 12.2207 17.7C11.7287 17.7 11.3207 17.292 11.3207 16.8V12.9H7.4207C6.9287 12.9 6.5207 12.492 6.5207 12C6.5207 11.508 6.9287 11.1 7.4207 11.1H11.3207V7.2C11.3207 6.708 11.7287 6.3 12.2207 6.3C12.7127 6.3 13.1207 6.708 13.1207 7.2V11.1H17.0207C17.5127 11.1 17.9207 11.508 17.9207 12C17.9207 12.492 17.5127 12.9 17.0207 12.9Z" fill="#00B147"/></svg></span>'
+            : ""
         }
 
         <div class="menu-icon" onclick="handleMenuClick('${verifiedArgs.id}')">
